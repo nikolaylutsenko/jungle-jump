@@ -14,7 +14,7 @@ tracks/0/loop_wrap = true
 tracks/0/keys = {
 "times": PackedFloat32Array(0),
 "transitions": PackedFloat32Array(1),
-"update": 1,
+"update": 0,
 "values": [Vector2i(7, 0)]
 }
 
@@ -47,7 +47,7 @@ tracks/0/path = NodePath("Sprite2D:frame_coords")
 tracks/0/interp = 1
 tracks/0/loop_wrap = true
 tracks/0/keys = {
-"times": PackedFloat32Array(0, 0.3),
+"times": PackedFloat32Array(0, 0.4),
 "transitions": PackedFloat32Array(1, 1),
 "update": 0,
 "values": [Vector2i(7, 0), Vector2i(10, 0)]
@@ -112,10 +112,12 @@ _data = {
 "run": SubResource("Animation_t4a2m")
 }
 
-[sub_resource type="RectangleShape2D" id="RectangleShape2D_uahwd"]
-size = Vector2(10, 20)
+[sub_resource type="CapsuleShape2D" id="CapsuleShape2D_nkb83"]
+radius = 7.0
+height = 20.0
 
 [node name="Player" type="CharacterBody2D"]
+position = Vector2(600, 300)
 collision_layer = 2
 collision_mask = 13
 script = ExtResource("1_5jt66")
@@ -134,7 +136,7 @@ libraries = {
 
 [node name="CollisionShape2D" type="CollisionShape2D" parent="."]
 position = Vector2(0, -10)
-shape = SubResource("RectangleShape2D_uahwd")
+shape = SubResource("CapsuleShape2D_nkb83")
 
 [node name="Camera2D" type="Camera2D" parent="."]
 zoom = Vector2(2.5, 2.5)

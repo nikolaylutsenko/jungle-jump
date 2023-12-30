@@ -18,15 +18,20 @@ enum STATE {IDLE, RUN, JUMP, HURT, DEAD}
 
 var state: STATE = STATE.IDLE
 
-
 func _ready() -> void:
 	change_state(STATE.IDLE)
 
 
 func _physics_process(delta: float) -> void:
 	velocity.y += gravity * delta
-	get_input()
+	get_input(delta)
 	move_and_slide()
+	if state == STATE.HURT:
+		return
+	for i in get_slide_collision_count():
+		var collision =get_slide_collision(i)
+		if collision.get_collider().is_in_group("danger"):
+			hurt()
 	if state == STATE.JUMP and is_on_floor():
 		change_state(STATE.IDLE)
 	if state == STATE.JUMP and velocity.y > 0:
@@ -54,7 +59,7 @@ func change_state(new_state: STATE) -> void:
 			hide()
 
 
-func get_input():
+func get_input(delta):
 	if state == STATE.HURT:
 		return
 	var right = Input.is_action_pressed("right")
@@ -72,6 +77,15 @@ func get_input():
 	if jump and is_on_floor():
 		change_state(STATE.JUMP)
 		velocity.y = jump_speed
+	if is_on_wall():
+		velocity.y = 10
+	if is_on_wall_only() and Input.is_action_pressed("jump"):
+		if right:
+			velocity.x = -jump_speed
+		else:
+			velocity.x = jump_speed
+		velocity.y = jump_speed
+		
 	#IDLE transitions to RUN when moving
 	if state == STATE.IDLE and velocity.x != 0:
 		change_state(STATE.RUN)

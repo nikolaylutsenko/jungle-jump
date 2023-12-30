@@ -1,14 +1,10 @@
 [gd_resource type="TileSet" load_steps=5 format=3 uid="uid://dhxw3f8l2saqn"]
 
-[ext_resource type="Texture2D" uid="uid://dlu3lc2egdqu8" path="res://assets/environment/tileset.png" id="1_4qlxr"]
-[ext_resource type="Texture2D" uid="uid://ldtssxu78xc3" path="res://assets/environment/props.png" id="2_pelyq"]
+[ext_resource type="Texture2D" uid="uid://dt6ote0yfra0q" path="res://assets/environment/tileset.png" id="1_4qlxr"]
+[ext_resource type="Texture2D" uid="uid://c8hmu8x8ojyra" path="res://assets/environment/props.png" id="2_pelyq"]
 
 [sub_resource type="TileSetAtlasSource" id="TileSetAtlasSource_bsh4r"]
 texture = ExtResource("1_4qlxr")
-1:1/0 = 0
-1:1/0/physics_layer_0/linear_velocity = Vector2(0, 0)
-1:1/0/physics_layer_0/angular_velocity = 0.0
-1:1/0/physics_layer_0/polygon_0/points = PackedVector2Array(-8, -8, 8, -8, 8, 8, -8, 8)
 5:1/0 = 0
 5:1/0/physics_layer_0/linear_velocity = Vector2(0, 0)
 5:1/0/physics_layer_0/angular_velocity = 0.0
@@ -319,6 +315,10 @@ texture = ExtResource("1_4qlxr")
 3:1/0/physics_layer_0/linear_velocity = Vector2(0, 0)
 3:1/0/physics_layer_0/angular_velocity = 0.0
 3:1/0/physics_layer_0/polygon_0/points = PackedVector2Array(-8, -8, 8, -8, 8, 8, -8, 8)
+1:1/0 = 0
+1:1/0/physics_layer_0/linear_velocity = Vector2(0, 0)
+1:1/0/physics_layer_0/angular_velocity = 0.0
+1:1/0/physics_layer_0/polygon_0/points = PackedVector2Array(-8, -8, 8, -8, 8, 8, -8, 8)
 
 [sub_resource type="TileSetAtlasSource" id="TileSetAtlasSource_vfjq7"]
 texture = ExtResource("2_pelyq")

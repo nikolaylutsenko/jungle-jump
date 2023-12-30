@@ -23,7 +23,6 @@ func _process(delta: float) -> void:
 	pass
 
 
-
 func _on_body_entered(body: Node2D) -> void:
 	picked_up.emit()
 	queue_free()
